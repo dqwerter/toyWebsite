@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+<link rel="stylesheet" href="w3.css">
+
+<body>
+
+<div class="w3-container w3-teal" >
+    <div class="testClass">
+        <h1 style=" max-width: 1200px">Web Design Project</h1>
+        <p style=" max-width: 1200px">This website is intend to practice some basic html & javascript. </p>
+    </div>
+</div>
+
+<!--center with max-width of 1200-->
+<div class="w3-row-padding testClass"  style=" max-width: 1200px">
+    <div class="w3-third">
+        <h2>A Stupid Shopping website</h2>
+        <p>Implement item description, shopping cart and transaction system. </p>
+        <p>Course project. Server-side database required. </p>
+    </div>
+
+    <div class="w3-third">
+        <h2>A Resume? </h2>
+        <p>Implement a comment system. </p>
+        <p>Find a template / build from scratch ? </p>
+    </div>
+
+    <div class="w3-third">
+        <h2>Xi Xi</h2>
+        <p id="name">Type in your name: </p> <input type="text" id="inputName"/>
+        <button type="button" onclick="nameDisplay()">Click Me</button>
+    </div>
+</div>
+
+<div class="w3-container w3-teal">
+    <p style="text-align: right" class="testClass">@DQwerter</p>
+</div>
+
+<script>
+    function nameDisplay() {
+        var name = document.getElementById("inputName").value;
+        if (name == "秦旺") {
+            document.getElementById("name").innerHTML = name;
+        } else {
+            printNormal(name);
+        }
+        // switch(name) {
+        //     case "zzy":
+        //         document.getElementById("name").innerHTML = "xiix";
+        //         break;
+        //     case y:
+        //         // code block
+        //         break;
+        //     default:
+        //     // code block
+        // }
+
+    }
+    function printNormal(name) {
+        document.getElementById("name").innerHTML = "你好，" + name + "!";
+    }
+    function printNeverHearedOf() {
+        
+    }
+    function printCute() {
+        
+    }
+    function printDiss() {
+
+    }
+</script>
+
+</body>
+</html>
