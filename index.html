@@ -27,7 +27,7 @@
         <p id="name">Type in your name: </p> <input type="text" id="inputName"/>
         <button type="button" onclick="nameDisplay()">Click Me</button>
     </div>
-</div>
+</div><br/>
 
 <div class="w3-container w3-teal">
     <p style="text-align: left" class="testClass">@DQwerter   # No rights reserved. </p>
@@ -38,8 +38,10 @@
         var name = document.getElementById("inputName").value;
         if (name == "秦旺") {
             document.getElementById("name").innerHTML = "叫我干嘛";
-        } else if (name == "张梓烨") {
+        } else if (name == "张梓烨" || name == "黎诗琪") {
             document.getElementById("name").innerHTML = "你是个好人";
+        } else if (name == "王欣迪") {
+            document.getElementById("name").innerHTML = "\"斯人若彩虹，遇见方知有\"";
         } else {
             printNormal(name);
         }
