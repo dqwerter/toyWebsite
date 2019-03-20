@@ -5,8 +5,8 @@
 <body>
 
 <div class="w3-container w3-teal">
-    <h1>W3Schools Demo</h1>
-    <p>Resize this responsive page!</p>
+    <h1>Website Project</h1>
+    <p>Basic html, javascript, PHP & server setup. </p>
 </div>
 
 <div class="w3-row-padding">
@@ -27,48 +27,46 @@
         <p id="name">Type in your name: </p> <input type="text" id="inputName"/>
         <button type="button" onclick="nameDisplay()">Click Me</button>
     </div>
-</div><br/>
+</div>
 
 <div class="w3-container w3-teal">
-    <p style="text-align: left" class="testClass">@DQwerter   # No rights reserved. </p>
+    <p style="text-align: left">@DQwerter   # No rights reserved. :-) </p>
 </div>
 
 <script>
     function nameDisplay() {
         var name = document.getElementById("inputName").value;
-        if (name == "秦旺") {
-            document.getElementById("name").innerHTML = "叫我干嘛";
-        } else if (name == "张梓烨" || name == "黎诗琪") {
-            document.getElementById("name").innerHTML = "你是个好人";
-        } else if (name == "王欣迪") {
-            document.getElementById("name").innerHTML = "\"斯人若彩虹，遇见方知有\"";
-        } else {
-            printNormal(name);
+        switch(name) {
+            case "秦旺":
+                document.getElementById("name").innerHTML = "叫我干嘛";
+                break;
+            case "王欣迪":
+                document.getElementById("name").innerHTML = "\"斯人若彩虹，遇见方知有\"";
+                break;
+            case "张梓烨":
+            case "黎诗琪":
+                document.getElementById("name").innerHTML = name + "是个好人";
+                break;
+            default:
+                randomGreeting(name);
         }
-        // switch(name) {
-        //     case "zzy":
-        //         document.getElementById("name").innerHTML = "xiix";
-        //         break;
-        //     case y:
-        //         // code block
-        //         break;
-        //     default:
-        //     // code block
-        // }
+    }
 
+    function randomGreeting(name) {
+        var randomNum = Math.random();
+        if (randomNum < 0.25) {
+            document.getElementById("name").innerHTML = "你好，" + name + "!";
+        } else if (randomNum < 0.5) {
+            document.getElementById("name").innerHTML = "2";
+        } else if (randomNum < 0.75) {
+            document.getElementById("name").innerHTML = "3";
+        } else if (randomNum < 0.80) {
+            document.getElementById("name").innerHTML = name + "是个弟弟";
+        } else {
+            document.getElementById("name").innerHTML = "4";
+        }
     }
-    function printNormal(name) {
-        document.getElementById("name").innerHTML = "你好，" + name + "!";
-    }
-    function printNeverHearedOf() {
 
-    }
-    function printCute() {
-
-    }
-    function printDiss() {
-
-    }
 </script>
 
 </body>
