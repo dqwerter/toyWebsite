@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-<link rel="stylesheet" href="w3.css">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <link rel="stylesheet" href="w3.css">
+</head>
 <body>
 
 <div class="w3-container w3-teal">
@@ -17,14 +19,14 @@
     </div>
 
     <div class="w3-third">
-        <h2>A Resume? </h2>
-        <p>Implement a comment system. </p>
-        <p>Find a template / build from scratch ? </p>
+        <h2><a href="treehole.html">Treehole</a> </h2>
+        <p>What are you thinking about now? </p>
+        <p>Implement a comment system. Find a template / build from scratch ? </p>
     </div>
 
     <div class="w3-third">
-        <h2>Xi Xi</h2>
-        <p id="name">Type in your name: </p> <input type="text" id="inputName"/>
+        <h2 id="name">Your Name Here</h2>
+        <p>Type in your name: </p> <input type="text" id="inputName"/>
         <button type="button" onclick="nameDisplay()">Click Me</button>
     </div>
 </div>
@@ -48,7 +50,8 @@
                 document.getElementById("name").innerHTML = name + "是个好人";
                 break;
             case "申雨泽":
-                document.getElementById("name").innerHTML = name + "是个傻逼";
+                alert("整天学人家讲大道理，教别人写代码，做项目\n满口的低耦合、高内聚、大并发、框架内核、底层原理、结构算法\n自己一写代码，10 行代码 9 行报错! ");
+                console.error("整天学人家讲大道理，教别人写代码，做项目\n满口的低耦合、高内聚、大并发、框架内核、底层原理、结构算法\n自己一写代码，10 行代码 9 行报错! ");
                 break;
             default:
                 randomGreeting(name);
@@ -57,16 +60,14 @@
 
     function randomGreeting(name) {
         var randomNum = Math.random();
-        if (randomNum < 0.25) {
+        if (randomNum < 0.5) {
             document.getElementById("name").innerHTML = "你好，" + name + "!";
-        } else if (randomNum < 0.5) {
-            document.getElementById("name").innerHTML = "2";
         } else if (randomNum < 0.75) {
-            document.getElementById("name").innerHTML = "3";
-        } else if (randomNum < 0.80) {
+            document.getElementById("name").innerHTML = "今天过得怎么样？";
+        } else if (randomNum < 0.78) {
             document.getElementById("name").innerHTML = name + "是个弟弟";
         } else {
-            document.getElementById("name").innerHTML = "4";
+            document.getElementById("name").innerHTML = name + "真可爱";
         }
     }
 
