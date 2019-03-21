@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <link rel="stylesheet" href="w3.css">
+    <title>kNOwhere</title>
 </head>
+
 <body onload="show()">
 <div class="w3-container w3-teal">
-    <h1>Treehole</h1>
-    <p>Anonymous comment system. </p>
+    <h1>kNOwhere</h1>
+    <p>Anonymous post system. (Real name are not recommended!) </p>
 </div>
+
 <div class="w3-row-padding">
     <div>
-        <h2>Time Display</h2>
-        <p id="curr_time">Date()</p>
+        <h2>Current Time</h2>
+        <p id="curr_time">Time should be displayed here. </p>
     </div>
 </div>
+
+<div class="w3-container w3-teal">
+    <!--implement a random quote-->
+    <p style="text-align: left"><a href="https://github.com/dqwerter">@DQwerter</a> # <a href="404.html">Nothing</a> really matters. </p>
+</div>
+
 </body>
 </html>
 
 <script>
     function show(){
         // https://blog.csdn.net/happy_jijiawei/article/details/47356089
-        var date = new Date(); //日期对象
-        var now = "";
+        const date = new Date(); //日期对象
+        let now;
         now = date.getFullYear() + "年"; //读英文就行了
         now = now + (date.getMonth()+1) + "月"; //取月的时候取的是当前月-1如果想取当前月+1就可以了
         now = now + date.getDate() + "日";
