@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/css/w3.css">
+    <link rel="stylesheet" href="/css/w3.css">
     <title>Website Project</title>
 </head>
 <body>
@@ -14,36 +14,89 @@
 
 <div class="w3-row-padding">
     <div class="w3-third">
-        <h2>A Stupid Star</h2>
-        <p>Implement item descriptions, a <del>fake</del> shopping cart and a <del>fake</del> transaction system. </p>
-        <p>Course project. Server-side database required. </p>
+        <h2 id="weather-name">How's the weather today?</h2>
+        <form action="/weather" method="post">
+            <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
+            <input type="submit" class="ghost-button" value="Get Weather">
+        </form>
     </div>
 
     <div class="w3-third">
-        <h2><a href="../public/kNOwhere.html">kNOwhere</a> </h2>
+        <h2><a href="/public/kNOwhere.html">kNOwhere</a> </h2>
         <p>Welcome to the kNOwhere. </p>
         <p>Implement an anonymous comment system. </p>
     </div>
 
     <div class="w3-third">
         <h2 id="name">Your Name Here</h2>
-        <p>Type in your name: </p>
-        <form action="/" method="post">
-            <input name="name" type="text" class="input" placeholder="Your Name Here" required>
-            <input type="submit" class="button" value="Click Me">
-        </form>
+        <p>Type in your name: </p> <label for="inputName"></label><input type="text" id="inputName"/>
+        <button type="button" onclick="nameDisplay()">Click Me</button>
     </div>
 </div>
 
 <div class="w3-container w3-teal">
     <!--implement a random quote-->
-    <p style="text-align: left"><a href="https://github.com/dqwerter">@DQwerter</a> # <a href="../public/404.html">Nothing</a> really matters. </p>
+    <p style="text-align: left"><a href="https://github.com/dqwerter">@DQwerter</a> # <a href="404.html">Nothing</a> really matters. </p>
 </div>
 
 <script>
-    <% if( nameAlert !== null){ %>
-    <%  alert(nameAlert); %>
-    <% } %>
+  let storedName = localStorage.getItem('name');
+  if(storedName) {
+    document.getElementById("weather-name").innerHTML = "How's the weather today, " + storedName + "?";
+  }
+
+  function nameDisplay() {
+    const name = document.getElementById("inputName").value;
+    localStorage.setItem('name', name);
+    switch(name) {
+      case "":
+        break;
+      case "秦旺":
+        document.getElementById("name").innerHTML = "叫我干嘛?";
+        break;
+      case "王欣迪":
+        // 找到这个你牛逼，请保守我的小秘密
+        alert("我用什么才能留住你？\n\n" +
+          "我给你瘦落的街道、绝望的落日、荒郊的月亮。\n" +
+          "我给你一个久久地望着孤月的人的悲哀。\n" +
+          "我给你我已死去的祖辈，后人们用大理石祭奠的先魂：\n" +
+          "我父亲的父亲，阵亡于布宜诺斯艾利斯的边境，两颗子弹射穿了他的胸膛，死的时候蓄着胡子，尸体被士兵们用牛皮裹起\n" +
+          "我母亲的祖父——那年才二十四岁——在秘鲁率领三百人冲锋，如今都成了消失的马背上的亡魂。\n\n" +
+          "我给你我的书中所能蕴含的一切悟力，以及我生活中所能有的男子气概和幽默。\n" +
+          "我给你一个从未有过信仰的人的忠诚。\n" +
+          "我给你我设法保全的我自己的核心——不营字造句，不和梦交易，不被时间、欢乐和逆境触动的核心。\n" +
+          "我给你早在你出生前多年的一个傍晚看到的一朵黄玫瑰的记忆。\n" +
+          "我给你关于你生命的诠释，关于你自己的理论，你的真实而惊人的存在。\n" +
+          "我给你我的寂寞、我的黑暗、我心的饥渴；我试图用困惑、危险、失败来打动你。\n");
+        break;
+      case "张梓烨":
+      case "黎诗琪":
+      case "沈楚鹰":
+        document.getElementById("name").innerHTML = name + "是个好人";
+        break;
+      case "申雨泽":
+        // 这位爷是个沙雕
+        const fck = "整天学人家讲大道理，教别人写代码，做项目\n满口的低耦合、高内聚、大并发、框架内核、底层原理、结构算法\n自己一写代码，10 行代码 9 行报错! \n想吃饭？吃 * 吧你！";
+        alert(fck);
+        console.error(fck);
+        document.getElementById("name").innerHTML = "申雨泽快滚吧";
+        break;
+      default:
+        randomGreeting(name);
+    }
+  }
+  function randomGreeting(name) {
+    const randomNum = Math.random();
+    if (randomNum < 0.5) {
+      document.getElementById("name").innerHTML = "你好，" + name + "!";
+    } else if (randomNum < 0.75) {
+      document.getElementById("name").innerHTML = "今天过得怎么样？";
+    } else if (randomNum < 0.78) {
+      document.getElementById("name").innerHTML = name + "是个弟弟";
+    } else {
+      document.getElementById("name").innerHTML = name + "真可爱";
+    }
+  }
 </script>
 
 </body>
