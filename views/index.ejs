@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <link rel="stylesheet" href="/css/w3.css">
@@ -75,16 +75,12 @@
       case "沈楚鹰":
         document.getElementById("name").innerHTML = name + "是个好人";
         break;
-      case "钱楚吟":
-        alert("多喝热水！多穿衣服！");
-        document.getElementById("name").innerHTML = "祝钱楚吟早日康复！";
-        break;
       case "申雨泽":
         // 这位爷是个沙雕
         const fck = "整天学人家讲大道理，教别人写代码，做项目\n满口的低耦合、高内聚、大并发、框架内核、底层原理、结构算法\n自己一写代码，10 行代码 9 行报错! \n想吃饭？吃 * 吧你！";
         alert(fck);
         console.error(fck);
-        document.getElementById("name").innerHTML = "申雨泽快滚吧";
+        document.getElementById("name").innerHTML = "快滚!";
         break;
       default:
         randomGreeting(name);
@@ -93,7 +89,7 @@
   function randomGreeting(name) {
     const randomNum = Math.random();
     if (randomNum < 0.5) {
-      document.getElementById("name").innerHTML = "你好，" + name + "!";
+      document.getElementById("name").innerHTML = name + "你好!";
     } else if (randomNum < 0.75) {
       document.getElementById("name").innerHTML = "今天过得怎么样？";
     } else if (randomNum < 0.78) {
