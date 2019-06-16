@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
-    <meta charset="utf-8">
-    <title>Test</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <link rel="stylesheet" href="/css/w3.css">
+    <title>Weather</title>
 </head>
 <body>
-<div class="container">
-    <fieldset>
+
+<div class="w3-container w3-teal">
+    <h1>Weather</h1>
+    <p>Weather in your City. </p>
+</div>
+
+<div class="container" style="padding: 3px">
         <form action="/weather" method="post">
             <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
             <input type="submit" class="ghost-button" value="Get Weather">
@@ -19,7 +24,10 @@
         <% if(error !== null){ %>
             <p><%= error %></p>
         <% } %>
-    </fieldset>
+</div>
+<div class="w3-container w3-teal">
+    <!--implement a random quote-->
+    <p style="text-align: left"><a href="https://github.com/dqwerter">@DQwerter</a> # <a href="404.html">Nothing</a> really matters. </p>
 </div>
 </body>
 </html>

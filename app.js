@@ -46,5 +46,3 @@ app.get('/kNOwhere.html', function (req, res) {
 app.listen(80, function () {
   console.log('Server running at port 80')
 });
-
-// original: https://github.com/bmorelli25
