@@ -39,7 +39,7 @@ module.exports = {
                 // check the filetype before uploading it
                 if (uploadedFile.mimetype === 'image/png' || uploadedFile.mimetype === 'image/jpeg' || uploadedFile.mimetype === 'image/gif') {
                     // upload the file to the /public/assets/img directory
-                    uploadedFile.mv(`public/assets/img/${image_name}`, (err ) => {
+                    uploadedFile.mv(`public/assets/img/${image_name}`, (err) => {
                         if (err) {
                             return res.status(500).send(err);
                         }
@@ -50,14 +50,14 @@ module.exports = {
                             if (err) {
                                 return res.status(500).send(err);
                             }
-                            res.redirect('/');
+                            res.redirect('/user');
                         });
                     });
                 } else {
                     message = "Invalid File format. Only 'gif', 'jpeg' and 'png' images are allowed.";
                     res.render('add-user.ejs', {
                         message,
-                        title: "Welcome to Socka | Add a new user"
+                        title: "Add a new user"
                     });
                 }
             }
@@ -71,7 +71,7 @@ module.exports = {
                 return res.status(500).send(err);
             }
             res.render('edit-user.ejs', {
-                title: "Edit  user"
+                title: "Edit user"
                 ,user: result[0]
                 ,message: ''
             });
@@ -89,7 +89,7 @@ module.exports = {
             if (err) {
                 return res.status(500).send(err);
             }
-            res.redirect('/');
+            res.redirect('/user');
         });
     },
     deleteuser: (req, res) => {
@@ -112,7 +112,7 @@ module.exports = {
                     if (err) {
                         return res.status(500).send(err);
                     }
-                    res.redirect('/');
+                    res.redirect('/user');
                 });
             });
         });

@@ -1,33 +1,21 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <link rel="stylesheet" href="/css/w3.css">
-    <title>Weather</title>
-</head>
-<body>
+<% include partials/header.ejs %>
 
-<div class="w3-container w3-teal">
-    <h1>Weather</h1>
-    <p>Weather in your City. </p>
-</div>
 
-<div class="container" style="padding: 3px">
-        <form action="/weather" method="post">
-            <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
-            <input type="submit" class="ghost-button" value="Get Weather">
-        </form>
-        <% if(weather !== null){ %>
-            <p><%= weather %></p>
-        <% } %>
+<!-- Header -->
+<header class="w3-container w3-teal w3-center" style="padding:128px 16px">
+    <h1 class="w3-margin w3-jumbo" id="title">Get weather of your city.</h1>
+    <form action="/weather" method="post">
+        <input name="city" id="inputName" type="text" class="w3-xlarge" placeholder="Enter a City" required><br>
+        <input id="startButton" type="submit" class="w3-button w3-black w3-padding-large w3-large w3-margin-top" value="Get Weather">
+    </form>
+    <% if(weather !== null){ %>
+        <p class="w3-xlarge w3-padding-24"><%= weather %></p>
+    <% } %>
 
-        <% if(error !== null){ %>
-            <p><%= error %></p>
-        <% } %>
-</div>
-<div class="w3-container w3-teal">
-    <!--implement a random quote-->
-    <p style="text-align: left"><a href="https://github.com/dqwerter">@DQwerter</a> # <a href="404.html">Nothing</a> really matters. </p>
-</div>
+    <% if(error !== null){ %>
+        <p class="w3-xlarge w3-padding-24"><%= error %></p>
+    <% } %>
+</header>
+
 </body>
 </html>

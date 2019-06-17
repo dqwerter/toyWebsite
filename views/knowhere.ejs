@@ -1,0 +1,42 @@
+<% include partials/header.ejs %>
+
+<header class="w3-container w3-teal w3-center" style="padding:64px 16px">
+    <h1 class="w3-margin w3-jumbo" id="title">kNOwhere</h1>
+    <p class="w3-xlarge">Anonymous post system. <br>(Real name are not recommended!) </p>
+</header>
+
+<div class="w3-row-padding" onload="show()">
+    <div>
+        <h2>Current Time</h2>
+        <p id="curr_time">Time should be displayed here. </p>
+    </div>
+</div>
+
+<div class="w3-container w3-teal">
+    <!--implement a random quote-->
+    <p style="text-align: left"><a href="https://github.com/dqwerter">@DQwerter</a> # <a href="404.html">Nothing</a> really matters. </p>
+</div>
+
+</body>
+</html>
+
+<script>
+    // TODO rewrite time display
+  window.onload = function show(){
+    // https://blog.csdn.net/happy_jijiawei/article/details/47356089
+    const date = new Date(); //日期对象
+    let weekday;
+    switch (date.getDay()) {
+      case 1:weekday = "Monday";break;
+      case 2:weekday = "Tuesday";break;
+      case 3:weekday = "Wednesday";break;
+      case 4:weekday = "Thursday";break;
+      case 5:weekday = "Friday";break;
+      case 6:weekday = "Saturday";break;
+      case 7:weekday = "Sunday";break;
+    }
+    document.getElementById("curr_time").innerHTML = date.toLocaleString() + " " + weekday;
+    setTimeout("show()",1000); //设置过1000毫秒就是1秒，调用show方法
+    }
+
+</script>

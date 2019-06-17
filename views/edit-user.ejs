@@ -1,4 +1,6 @@
 <% include partials/header.ejs %>
+
+
 <div class="container">
     <% if (message) { %>
         <p class="text-center text-danger"><%= message %></p>
@@ -37,7 +39,7 @@
             <button type="submit" class="btn btn-success float-right">Update User</button>
         </form>
     <% } else { %>
-        <p class="text-center">User Not Found. Go <a href="/add">here</a> to add a user.</p>
+        <p class="text-center">User Not Found. Go <a href="/user/add">here</a> to add a user.</p>
     <% } %>
 </div>
 </div>

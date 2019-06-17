@@ -1,46 +1,114 @@
 <% include partials/header.ejs %>
-    <div class="table-wrapper">
-        <a class="w3-button w3-black w3-padding-large w3-large w3-margin-top" href="/" title="User Management">User Management</a>
-        <a class="w3-button w3-black w3-padding-large w3-large w3-margin-top" href="/add" title="Add a New user">Add a user</a>
-        <% if (users.length > 0) {%>
-            <div class="container w3-padding-16">
-                <table class="table table-hovered">
-                    <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Position</th>
-                        <th scope="col">Number</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <% users.forEach((user, index) => { %>
-                        <tr>
-                            <th scope="row"><%= user.id %></th>
-                            <td><img src="/assets/img/<%= user.image %>" class="rounded-circle user-img" alt=""></td>
-                            <td><%= user.first_name %></td>
-                            <td><%= user.last_name %></td>
-                            <td><%= user.position %></td>
-                            <td><%= user.number %></td>
-                            <td>@<%= user.user_name %></td>
-                            <td>
-                                <a href="/edit/<%= user.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
-                                <a href="/delete/<%= user.id %>" class="btn btn-sm btn-danger">Delete</a>
-                            </td>
-                        </tr>
-                    <% }) %>
-                    </tbody>
-                </table>
-            </div>
 
-        <% } else { %>
-            <p class="text-center">No users found. Go <a href="/add" >here</a> to add users.</p>
-        <% } %>
+
+<!-- Header -->
+<header class="w3-container w3-teal w3-center" style="padding:128px 16px">
+    <h1 class="w3-margin w3-jumbo" id="title">Website Project</h1>
+    <input type="text" id="inputName" style="text-align:center;" placeholder="Your Name Here" class="w3-xlarge" /></br>
+    <button id="startButton" type="button" class="w3-button w3-black w3-padding-large w3-large w3-margin-top"
+            onclick="nameDisplay()">Get Started</button>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+        <div class="w3-twothird">
+            <h1 id="greeting">How's your day?</h1>
+            <h5 class="w3-padding-32">Description.</h5>
+            <p class="w3-text-grey">Geo ip info.</p>
+        </div>
+
+        <div class="w3-third w3-center">
+            <i class="fa fa-anchor w3-padding-64 w3-text-teal"></i>
+        </div>
     </div>
 </div>
+
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+    <div class="w3-content">
+        <div class="w3-third w3-center">
+            <i class="fa fa-coffee w3-padding-64 w3-text-teal w3-margin-right"></i>
+        </div>
+
+        <div class="w3-twothird">
+            <h1>Second Grid</h1>
+            <h5 class="w3-padding-32">Description.</h5>
+            <p class="w3-text-grey">Some Note maybe.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-teal w3-center w3-padding-32">
+    <h2 class="w3-margin w3-xlarge">Quote of the day</br>Live Life</h2>
+</footer>
+
+
+<script>
+  // Used to toggle the menu on small screens when clicking on the menu button
+    function menuFun() {
+      const x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") === -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+
+    // dynamically change name greeting
+  let storedName = localStorage.getItem('name');
+  if (storedName) {
+    document.getElementById("greeting").innerHTML = "How's your day, " + storedName + "?";
+  }
+
+  function nameDisplay() {
+    const name = document.getElementById("inputName").value;
+    localStorage.setItem('name', name);
+    switch(name) {
+      case "":
+        break;
+      case "秦旺":
+        document.getElementById("greeting").innerHTML = "叫我干嘛?";
+        break;
+      case "王欣迪":
+        // 找到这个你牛逼，请保守我的小秘密
+        alert("我用什么才能留住你？\n\n" +
+          "我给你瘦落的街道、绝望的落日、荒郊的月亮。\n" +
+          "我给你一个久久地望着孤月的人的悲哀。\n" +
+          "我给你我已死去的祖辈，后人们用大理石祭奠的先魂：\n" +
+          "我父亲的父亲，阵亡于布宜诺斯艾利斯的边境，两颗子弹射穿了他的胸膛，死的时候蓄着胡子，尸体被士兵们用牛皮裹起\n" +
+          "我母亲的祖父——那年才二十四岁——在秘鲁率领三百人冲锋，如今都成了消失的马背上的亡魂。\n\n" +
+          "我给你我的书中所能蕴含的一切悟力，以及我生活中所能有的男子气概和幽默。\n" +
+          "我给你一个从未有过信仰的人的忠诚。\n" +
+          "我给你我设法保全的我自己的核心——不营字造句，不和梦交易，不被时间、欢乐和逆境触动的核心。\n" +
+          "我给你早在你出生前多年的一个傍晚看到的一朵黄玫瑰的记忆。\n" +
+          "我给你关于你生命的诠释，关于你自己的理论，你的真实而惊人的存在。\n" +
+          "我给你我的寂寞、我的黑暗、我心的饥渴；我试图用困惑、危险、失败来打动你。\n");
+        open("../resources/xd.m4a");
+        break;
+      case "张梓烨":
+      case "黎诗琪":
+      case "沈楚鹰":
+        document.getElementById("greeting").innerHTML = "祝好，" + name + "！";
+        break;
+      case "申雨泽":
+        // 这位爷是个沙雕
+        const fck = "整天学人家讲大道理，教别人写代码，做项目\n满口的低耦合、高内聚、大并发、框架内核、底层原理、结构算法\n自己一写代码，10 行代码 9 行报错! \n想吃饭？吃 * 吧你！";
+        alert(fck);
+        console.error(fck);
+        const ids = ['title', 'homeLink', 'link1', 'link2', 'link3', 'link4', 'link5', 'startButton', ''];
+        ids.forEach(function(id){
+          document.getElementById(id).innerHTMfL = "快滚!";
+        });
+        break;
+      default:
+        break;
+    }
+  }
+
+</script>
+
 </body>
 </html>
