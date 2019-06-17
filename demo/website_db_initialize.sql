@@ -1,18 +1,19 @@
 -- This file is intended to initialize the database of the website.
 
-CREATE TABLE Users (
-    uid int,
-    username varchar(255),
-    password varchar(255),
-    email varchar(255),
-    phoneNumber varchar(255),
-    address varchar(255)
-);
+# CREATE DATABASE website_database;
 
-INSERT INTO Users VALUES('0', 'root', 'root', 'danielqin7@outlook.com', NULL, NULL);
+# USE website_database;
 
-CREATE TABLE comments
-(
-    comment_id int,
-    FOREIGN KEY (author) REFERENCES Users (uid)
-);
+# DROP TABLE users;
+
+CREATE TABLE IF NOT EXISTS users (
+                                       id int(5) NOT NULL AUTO_INCREMENT,
+                                       first_name varchar(255) NOT NULL,
+                                       last_name varchar(255) NOT NULL,
+                                       position varchar(255) NOT NULL,
+                                       number int(11) NOT NULL,
+                                       image varchar(255) NOT NULL,
+                                       user_name varchar(20) NOT NULL,
+                                       PRIMARY KEY (id)
+) ENGINE=InnoDB  DEFAULT CHARSET=UTF8MB4 AUTO_INCREMENT=1;
+

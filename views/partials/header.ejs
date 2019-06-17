@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Website Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script>
+  function menuFun() {
+    const x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") === -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
+</script>
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+    .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+    .fa-anchor,.fa-coffee {font-size:200px}
+    ::-webkit-input-placeholder {
+        text-align: center;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+        text-align: center;
+    }
+    ::-moz-placeholder {  /* Firefox 19+ */
+        text-align: center;
+    }
+    :-ms-input-placeholder {
+        text-align: center;
+    }
+    .table-wrapper {
+        margin-top: 50px;
+    }
+    .user-img {
+        width: 40px;
+        height: 40px;
+    }
+    .add-user-form {
+        margin-top: 50px;
+    }
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-teal w3-card w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large
+        w3-teal" href="javascript:void(0);" onclick="menuFun()" title="Toggle Navigation Menu">
+            <i class="fa fa-bars"></i></a>
+        <a href="#" id="homeLink" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+        <a href="#" id="link1" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Weather</a>
+        <a href="#" id="link2" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">kNOwhere</a>
+        <a href="#" id="link3" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Resume</a>
+        <a href="#" id="link4" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">404 Page</a>
+        <a href="#" id="link5" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">@dqwerter</a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Weather</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">kNOwhere</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Resume</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">404 Page</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">@dqwerter</a>
+    </div>
+</div>
