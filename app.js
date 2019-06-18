@@ -63,7 +63,9 @@ app.get('/user/edit/:id', edituserPage);
 app.get('/user/delete/:id', deleteuser);
 app.post('/user/add', adduser);
 app.post('/user/edit/:id', edituser);
-
+app.get('/forU', (req, res) => {
+  res.sendfile('public/resources/xd.m4a');
+});
 
 
 

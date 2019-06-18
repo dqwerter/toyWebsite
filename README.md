@@ -1,14 +1,23 @@
-# toyWebsite
+# Toy Website
 
-Basic html, javascript, PHP &amp; server setup. 
+Basic html, javascript, nodejs,  &amp; server setup. 
 
 ## Setup
 
-install nodejs
+Install nodejs:
 
 ```
 curl -sL https://rpm.nodesource.com/setup_12.x | bash - #centOS 
 ```
 
-npm install --production
+Git clone then go to project root:
 
+```
+npm install
+```
+
+If missing any module, use ```npm install``` to fix. 
+
+## Disclaimer
+
+This project is only for reference. 
