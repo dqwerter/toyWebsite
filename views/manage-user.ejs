@@ -1,7 +1,7 @@
 <% include partials/header.ejs %>
-    <div class="table-wrapper">
-        <a class="w3-button w3-black w3-padding-large w3-large w3-margin-top" href="/user" title="User Management">User Management</a>
-        <a class="w3-button w3-black w3-padding-large w3-large w3-margin-top" href="/user/add" title="Add a New user">Add a user</a>
+    <div>
+        <a class="w3-button w3-black w3-padding-large w3-large" href="/user" title="User Management">User Management</a>
+        <a class="w3-button w3-black w3-padding-large w3-large" href="/user/add" title="Add a New user">Add a user</a>
         <% if (users.length > 0) {%>
             <div class="container w3-padding-16">
                 <table class="table table-hovered">
@@ -11,7 +11,7 @@
                         <th scope="col">Image</th>
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
-                        <th scope="col">Position</th>
+                        <th scope="col">Gender</th>
                         <th scope="col">Number</th>
                         <th scope="col">Username</th>
                         <th scope="col">Action</th>
@@ -24,7 +24,7 @@
                             <td><img src="/assets/img/<%= user.image %>" class="rounded-circle user-img" alt=""></td>
                             <td><%= user.first_name %></td>
                             <td><%= user.last_name %></td>
-                            <td><%= user.position %></td>
+                            <td><%= user.gender %></td>
                             <td><%= user.number %></td>
                             <td>@<%= user.user_name %></td>
                             <td>

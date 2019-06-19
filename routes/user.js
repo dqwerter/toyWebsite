@@ -15,7 +15,7 @@ module.exports = {
         let message = '';
         let first_name = req.body.first_name;
         let last_name = req.body.last_name;
-        let position = req.body.position;
+        let gender = req.body.gender;
         let number = req.body.number;
         let username = req.body.username;
         let uploadedFile = req.files.image;
@@ -44,8 +44,8 @@ module.exports = {
                             return res.status(500).send(err);
                         }
                         // send the user's details to the database
-                        let query = "INSERT INTO users (first_name, last_name, position, number, image, user_name) VALUES ('" +
-                            first_name + "', '" + last_name + "', '" + position + "', '" + number + "', '" + image_name + "', '" + username + "')";
+                        let query = "INSERT INTO users (first_name, last_name, gender, number, image, user_name) VALUES ('" +
+                            first_name + "', '" + last_name + "', '" + gender + "', '" + number + "', '" + image_name + "', '" + username + "')";
                         db.query(query, (err, result) => {
                             if (err) {
                                 return res.status(500).send(err);
@@ -81,10 +81,10 @@ module.exports = {
         let userId = req.params.id;
         let first_name = req.body.first_name;
         let last_name = req.body.last_name;
-        let position = req.body.position;
+        let gender = req.body.gender;
         let number = req.body.number;
 
-        let query = "UPDATE `users` SET `first_name` = '" + first_name + "', `last_name` = '" + last_name + "', `position` = '" + position + "', `number` = '" + number + "' WHERE `users`.`id` = '" + userId + "'";
+        let query = "UPDATE `users` SET `first_name` = '" + first_name + "', `last_name` = '" + last_name + "', `gender` = '" + gender + "', `number` = '" + number + "' WHERE `users`.`id` = '" + userId + "'";
         db.query(query, (err, result) => {
             if (err) {
                 return res.status(500).send(err);

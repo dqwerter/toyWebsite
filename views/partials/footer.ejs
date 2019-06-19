@@ -1,4 +1,28 @@
 <!-- Footer -->
 <footer class="w3-container w3-teal w3-center w3-padding-32">
-    <h2 class="w3-margin w3-xlarge">Quote of the day</br>Live Life</h2>
+    <h2 class="w3-margin w3-xlarge">Quote of the Day</h2>
+    <h2 id="footer-quote" class="w3-margin w3-xlarge">Live Life.</h2>
+    <script>
+        const footerQuoteList = [
+          'Think different.',
+          'Man - a being in search of meaning.',
+          'Space is the breath of art.',
+          'Interpretation is the revenge of the intellectual upon art.\n',
+          'Be yourself; everyone else is already taken.',
+          'A room without books is like a body without a soul.',
+          'If you tell the truth, you don\'t have to remember anything.',
+          'A friend is someone who knows all about you and still loves you.',
+          'Darkness cannot drive out darkness: only light can do that.',
+          'Without music, life would be a mistake.',
+          'Don\'t cry because it\'s over, smile because it happened.',
+          'Be the change that you wish to see in the world.',
+          'XD',
+          'Everything you can imagine is real.',
+          'Success is not final, failure is not fatal: it is the courage to continue that counts.',
+          'You may say I\'m a dreamer, but I\'m not the only one.',
+          'The opposite of love is not hate; it’s indifference.',
+          'Life is not a problem to be solved, but a reality to be experienced.',
+          'The journey of a thousand miles begins with one step.'];
+        document.getElementById('footer-quote').innerHTML = footerQuoteList[Math.floor(Math.random()*footerQuoteList.length)];
+    </script>
 </footer>
