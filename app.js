@@ -68,8 +68,6 @@ app.get('/forU', (req, res) => {
 });
 
 
-
-
 app.get('/', function (req, res) {
   res.render('index', {nameAlert: null});
 });
@@ -77,11 +75,6 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
   const name = req.body.name;
 });
-
-
-// demo
-// find geo location by ip
-// const geoInfo = geoip.pretty(req.ip);
 
 
 // Start listening
