@@ -1,10 +1,10 @@
 -- This file is intended to initialize the database of the website.
 
-# CREATE DATABASE website_database;
+CREATE DATABASE website_database;
 
-# USE website_database;
+USE website_database;
 
-# DROP TABLE users;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE IF NOT EXISTS users (
                                        id int(5) NOT NULL AUTO_INCREMENT,

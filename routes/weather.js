@@ -6,7 +6,7 @@ const apiKey = 'ee9f261ae90f3df01977355cbe7ceb6c';
 module.exports = {
   getWeatherPage: (req, res) => {
     // find geo location by ip
-    const city = geoip.lookup(req.ip).city;
+    const city = (geoip.lookup(req.ip) != null)? (geoip.lookup(req.ip).city) : ('Nanjing');
     console.log(city);
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     request(url, function (err, response, body) {
@@ -19,6 +19,7 @@ module.exports = {
         } else {
           const weatherText = `You are probably in ${weather.name} and it's ${weather.main.temp} degrees in your city!`;
           res.render('weather', {weather: weatherText, error: null});
+          console.log(weatherText);
         }
       }
     });

@@ -1,4 +1,75 @@
-<% include partials/header.ejs %>
+<!DOCTYPE html>
+<html lang="en">
+<title>Website Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<script>
+  function menuFun() {
+    const x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") === -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
+</script>
+
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+    .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+    .fa-anchor,.fa-coffee {font-size:200px}
+    ::-webkit-input-placeholder {text-align: center;}
+    :-moz-placeholder { /* Firefox 18- */text-align: center;}
+    ::-moz-placeholder {  /* Firefox 19+ */text-align: center;}
+    :-ms-input-placeholder {text-align: center;}
+    .table-wrapper {margin-top: 50px;}
+    .user-img {width: 40px;height: 40px;}
+    .add-user-form {margin-top: 50px;}
+</style>
+
+<body onload="show()">
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-teal w3-card w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large
+        w3-teal" href="javascript:void(0);" onclick="menuFun()" title="Toggle Navigation Menu">
+            <i class="fa fa-bars"></i></a>
+        <a href="/" id="homeLink" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+        <a href="/weather" id="link1" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Weather</a>
+        <a href="/knowhere" id="link2" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">kNOwhere</a>
+        <a href="/resume" id="link3" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Resume</a>
+        <div class="w3-dropdown-hover w3-hide-small">
+            <button class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Notifications">Resume<i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                <a href="/resume" class="w3-bar-item w3-button">English</a>
+                <a href="/resume-zh-CN" class="w3-bar-item w3-button">Chinese</a>
+            </div>
+        </div>
+        <a href="/user" id="link4" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Users</a>
+        <a href="/404" id="link4" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">404 Page</a>
+        <a href="https://github.com/dqwerter" target="_blank" id="link5" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">@dqwerter</a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+        <a href="/weather" class="w3-bar-item w3-button w3-padding-large">Weather</a>
+        <a href="/knowhere" class="w3-bar-item w3-button w3-padding-large">kNOwhere</a>
+        <a href="/resume" class="w3-bar-item w3-button w3-padding-large">Resume English Ver</a>
+        <a href="/resume-zh-CN" class="w3-bar-item w3-button w3-padding-large">Resume Chinese Ver</a>
+        <a href="/user" class="w3-bar-item w3-button w3-padding-large">Users</a>
+        <a href="/404" class="w3-bar-item w3-button w3-padding-large">404 Page</a>
+        <a href="https://github.com/dqwerter" class="w3-bar-item w3-button w3-padding-large">@dqwerter</a>
+    </div>
+</div>
+<div class="w3-teal" style="padding-top: 25px;padding-bottom: 25px"></div>
+
 
 <header class="w3-container w3-teal w3-center" style="padding:128px 16px">
     <h1 class="w3-margin w3-jumbo" id="title">kNOwhere</h1>
@@ -15,8 +86,7 @@
 </html>
 
 <script>
-    // TODO rewrite time display
-  window.onload = function show(){
+  function show(){
     const date = new Date(); //日期对象
     let weekday;
     switch (date.getDay()) {

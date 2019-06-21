@@ -8,13 +8,12 @@ const path = require('path');
 
 const port = 80;
 
-
 const {getHomePage} = require('./routes/index');
 const {adduserPage, adduser, deleteuser, edituser, edituserPage} = require('./routes/user');
 const {manageUserPage} = require('./routes/manage-user');
 const {getWeatherPage, queryWeather} = require('./routes/weather');
 const {getKnowherePage} = require('./routes/knowhere');
-const {getResumePage} = require('./routes/resume');
+const {getResumePage, getResumePageZhCN} = require('./routes/resume');
 const {get404Page} = require('./routes/404');
 
 
@@ -54,6 +53,7 @@ app.post('/weather', queryWeather);
 app.get('/knowhere', getKnowherePage);
 
 app.get('/resume', getResumePage);
+app.get('/resume-zh-CN', getResumePageZhCN);
 
 app.get('/404', get404Page);
 
