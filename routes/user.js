@@ -3,8 +3,7 @@ const fs = require('fs');
 module.exports = {
     adduserPage: (req, res) => {
         res.render('add-user.ejs', {
-            title: "Add a new user"
-            ,message: ''
+            message: ''
         });
     },
     adduser: (req, res) => {
@@ -32,8 +31,7 @@ module.exports = {
             if (result.length > 0) {
                 message = 'Username already exists';
                 res.render('add-user.ejs', {
-                    message,
-                    title: "Add a new user"
+                    message
                 });
             } else {
                 // check the filetype before uploading it
@@ -56,8 +54,7 @@ module.exports = {
                 } else {
                     message = "Invalid File format. Only 'gif', 'jpeg' and 'png' images are allowed.";
                     res.render('add-user.ejs', {
-                        message,
-                        title: "Add a new user"
+                        message
                     });
                 }
             }
@@ -71,8 +68,7 @@ module.exports = {
                 return res.status(500).send(err);
             }
             res.render('edit-user.ejs', {
-                title: "Edit user"
-                ,user: result[0]
+                user: result[0]
                 ,message: ''
             });
         });

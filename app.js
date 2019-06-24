@@ -12,7 +12,7 @@ const {getHomePage} = require('./routes/index');
 const {adduserPage, adduser, deleteuser, edituser, edituserPage} = require('./routes/user');
 const {manageUserPage} = require('./routes/manage-user');
 const {getWeatherPage, queryWeather} = require('./routes/weather');
-const {getKnowherePage} = require('./routes/knowhere');
+const {getKnowherePage, addComment} = require('./routes/knowhere');
 const {getResumePage, getResumePageZhCN} = require('./routes/resume');
 const {get404Page} = require('./routes/404');
 
@@ -51,6 +51,7 @@ app.get('/weather', getWeatherPage);
 app.post('/weather', queryWeather);
 
 app.get('/knowhere', getKnowherePage);
+app.post('/knowhere', addComment);
 
 app.get('/resume', getResumePage);
 app.get('/resume-zh-CN', getResumePageZhCN);
@@ -64,7 +65,7 @@ app.get('/user/delete/:id', deleteuser);
 app.post('/user/add', adduser);
 app.post('/user/edit/:id', edituser);
 app.get('/forU', (req, res) => {
-  res.sendfile('public/resources/xd.m4a');
+  res.sendFile('public/resources/xd.m4a');
 });
 
 

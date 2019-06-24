@@ -8,8 +8,7 @@ module.exports = {
                 res.redirect('/');
             }
             res.render('manage-user.ejs', {
-                title: "View users"
-                ,users: result
+                users: result
             });
         });
     },

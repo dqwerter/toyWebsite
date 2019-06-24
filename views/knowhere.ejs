@@ -78,6 +78,52 @@
     <p class="w3-xlarge" id="curr_time">Time should be displayed here. </p>
 </header>
 
+<% if (errorMessage != '') { %>
+    <p class="text-center w3-xlarge"><%= errorMessage %></p>
+<% } %>
+
+<div>
+    <% if (comments.length > 0) {%>
+        <div class="w3-responsive">
+            <table class="w3-table w3-bordered w3-striped">
+                <thead class="w3-black">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Comment</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% comments.forEach((comment, index) => { %>
+                    <tr>
+                        <th scope="row"><%= comment.id %></th>
+                        <td><%= comment.content %></td>
+                        <td><%= comment.comment_time %></td>
+                        <td>@<%= comment.user_name %></td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        </div>
+    <% } %>
+</div>
+
+
+
+<div class="w3-row-padding w3-padding-24">
+    <label>New Comment</label>
+    <form class="w3-table w3-bordered w3-striped" method="post" enctype="multipart/form-data">
+        <div class="w3-twothird">
+            <input type="text" class="w3-input w3-border" name="comment" id="comment" placeholder="Comment" required>
+        </div>
+        <div class="w3-third">
+            <input type="text" class="w3-input w3-border" name="username" id="username" placeholder="Username" required>
+        </div>
+        <button type="submit" class="btn btn-primary float-right">Comment</button>
+    </form>
+</div>
+
 
 <% include partials/footer.ejs %>
 
@@ -101,5 +147,4 @@
     document.getElementById("curr_time").innerHTML = date.toLocaleString() + " " + weekday;
     setTimeout("show()",1000); //设置过1000毫秒就是1秒，调用show方法
     }
-
 </script>

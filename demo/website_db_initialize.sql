@@ -17,3 +17,11 @@ CREATE TABLE IF NOT EXISTS users (
                                        PRIMARY KEY (id)
 ) ENGINE=InnoDB  DEFAULT CHARSET=UTF8MB4 AUTO_INCREMENT=1;
 
+CREATE TABLE IF NOT EXISTS comments (
+                                        id int(5) NOT NULL AUTO_INCREMENT,
+                                        content varchar(1024) NOT NULL,
+                                        user_id int(5) NOT NULL references users(id),
+                                        comment_time datetime NOT NULL,
+                                        PRIMARY KEY (id)
+) ENGINE=InnoDB  DEFAULT CHARSET=UTF8MB4 AUTO_INCREMENT=1;
+

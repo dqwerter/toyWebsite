@@ -14,8 +14,9 @@
     <div class="w3-content">
         <div class="w3-twothird">
             <h1 id="greeting">How's your day?</h1>
-            <h5 class="w3-padding-32">Description.</h5>
-            <p class="w3-text-grey">Geo ip info.</p>
+            <h5 class="w3-padding-32">Design description.</h5>
+            <p class="w3-text-grey">This is a website with personal greeting(eastern eggs inside!), weather forecast,
+                dynamic time display, personal resume, user management, multimedia play, etc..</p>
         </div>
 
         <div class="w3-third w3-center">
@@ -33,9 +34,9 @@
         </div>
 
         <div class="w3-twothird">
-            <h1>Second Grid</h1>
-            <h5 class="w3-padding-32">Description.</h5>
-            <p class="w3-text-grey">Some Note maybe.</p>
+            <h1>Progressive Working</h1>
+            <h5 class="w3-padding-32">Technology description.</h5>
+            <p class="w3-text-grey">Basic html, javascript, nodejs,  &amp; server setup. </p>
         </div>
     </div>
 </div>
@@ -93,12 +94,14 @@
         break;
       case "申雨泽":
         // 这位爷是个沙雕
-        const fck = "整天学人家讲大道理，教别人写代码，做项目\n满口的低耦合、高内聚、大并发、框架内核、底层原理、结构算法\n自己一写代码，10 行代码 9 行报错! \n想吃饭？吃 * 吧你！";
+        const fck = "整天学人家讲大道理，教别人写代码，做项目\n满口的低耦合、高内聚、大并发、框架内核、底层原理、结构算法\n" +
+          "自己一写代码，10 行代码 9 行报错! \n想吃饭？吃 * 吧你！";
         alert(fck);
         console.error(fck);
-        const ids = ['title', 'homeLink', 'link1', 'link2', 'link3', 'link4', 'link5', 'startButton', ''];
+        const ids = ['title', 'homeLink', 'link1', 'link2', 'link3', 'link4', 'link5', 'link6', 'link7', 'link8',
+          'link1_1', 'link2_1', 'link3_1', 'link4_1', 'link5_1', 'link6_1', 'link7_1', 'startButton'];
         ids.forEach(function(id){
-          document.getElementById(id).innerHTMfL = "快滚!";
+          document.getElementById(id).innerHTML = "快滚!";
         });
         break;
       default:
