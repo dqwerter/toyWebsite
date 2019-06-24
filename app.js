@@ -65,7 +65,7 @@ app.get('/user/delete/:id', deleteuser);
 app.post('/user/add', adduser);
 app.post('/user/edit/:id', edituser);
 app.get('/forU', (req, res) => {
-  res.sendFile('public/resources/xd.m4a');
+  res.sendFile(path.join(__dirname, 'public/resources/xd.m4a'));
 });
 
 
