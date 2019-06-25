@@ -9,8 +9,7 @@ const path = require('path');
 const port = 80;
 
 const {getHomePage} = require('./routes/index');
-const {adduserPage, adduser, deleteuser, edituser, edituserPage} = require('./routes/user');
-const {manageUserPage} = require('./routes/manage-user');
+const {manageUserPage, adduserPage, adduser, deleteuser, edituser, edituserPage} = require('./routes/user');
 const {getWeatherPage, queryWeather} = require('./routes/weather');
 const {getKnowherePage, addComment} = require('./routes/knowhere');
 const {getResumePage, getResumePageZhCN} = require('./routes/resume');
@@ -67,16 +66,6 @@ app.post('/user/edit/:id', edituser);
 app.get('/forU', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/resources/xd.m4a'));
 });
-
-
-app.get('/', function (req, res) {
-  res.render('index', {nameAlert: null});
-});
-
-app.post('/', function (req, res) {
-  const name = req.body.name;
-});
-
 
 // Start listening
 app.listen(port, function () {
