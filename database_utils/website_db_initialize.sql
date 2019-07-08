@@ -4,8 +4,6 @@ CREATE DATABASE website_database;
 
 USE website_database;
 
-DROP TABLE IF EXISTS users;
-
 CREATE TABLE IF NOT EXISTS users (
                                        id int(5) NOT NULL AUTO_INCREMENT,
                                        first_name varchar(255) NOT NULL,
