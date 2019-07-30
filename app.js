@@ -14,7 +14,7 @@ const {getWeatherPage, queryWeather} = require('./routes/weather');
 const {getKnowherePage, addComment} = require('./routes/knowhere');
 const {getResumePage, getResumePageZhCN} = require('./routes/resume');
 const {get404Page} = require('./routes/404');
-
+const {getOutfitPage} = require('./routes/outfit');
 
 app.set('port', process.env.port || port); // set express to use this port
 app.use(express.static(path.join(__dirname, 'public')));
@@ -63,9 +63,12 @@ app.get('/user/edit/:id', edituserPage);
 app.get('/user/delete/:id', deleteuser);
 app.post('/user/add', adduser);
 app.post('/user/edit/:id', edituser);
+
 app.get('/forU', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/resources/xd.m4a'));
 });
+
+app.get('/outfit', getOutfitPage);
 
 // Start listening
 app.listen(port, function () {
